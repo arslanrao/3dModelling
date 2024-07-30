@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>3D Modelling | Visnext</title>
-    <meta name="description" content="3D Modelling! Visnext">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <meta name="description" content="A POC for 3D Modelling! Visnext">
+    <script src="aframe-master.js"></script>
   </head>
   <body>
     <a-scene>
@@ -12,8 +12,8 @@
         <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 
         <!-- Images. -->
-        <img id="city" src="kitchen.jpg">
-        <img id="city-thumb" src="kitchen.jpg">
+        <img id="city" src="kitchen.JPG">
+        <img id="city-thumb" src="kitchen.JPG">
         <img id="cubes" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
         <img id="cubes-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
         <img id="sechelt" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
@@ -23,17 +23,24 @@
       <!-- 360-degree image. -->
       <a-sky id="image-360" radius="10" src="#city"></a-sky>
 
-      <!-- Link template we will build. -->
-      <a-entity class="link"></a-entity>
+      <a-entity id="player">
+        <!-- Hands -->
+        <a-entity id="teleHand"
+                  hand-controls="hand: left"
+                  blink-controls="collisionEntities: [mixin='voxel'], #ground"></a-entity>
+        <a-entity id="blockHand"
+                  hand-controls="hand: right"
+                  laser-controls
+                  raycaster="near: 0.5"
+                  intersection-spawn="event: click; mixin: voxel"></a-entity>
 
-      <!-- Camera + Cursor. -->
-      <a-camera>
-        <a-cursor
-          id="cursor"
-          animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
-          animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
-          animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
-      </a-camera>
+        <!-- Camera -->
+        <a-camera>
+          <!-- Uncomment the line below to place blocks on desktop or mobile -->
+          <!-- <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor> -->
+        </a-camera>
+      </a-entity>
+
     </a-scene>
   </body>
 </html>
