@@ -1,46 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>3D Modelling | Visnext</title>
-    <meta name="description" content="A POC for 3D Modelling! Visnext">
-    <script src="aframe-master.js"></script>
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Modelling | Visnet</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+        body { margin: 0; }
+        #scene { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
     <a-scene>
-      <a-assets>
-        <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-
-        <!-- Images. -->
-        <img id="city" src="kitchen.JPG">
-        <img id="city-thumb" src="kitchen.JPG">
-        <img id="cubes" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
-        <img id="cubes-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-        <img id="sechelt" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
-        <img id="sechelt-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
-      </a-assets>
-
-      <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#city"></a-sky>
-
-      <a-entity id="player">
-        <!-- Hands -->
-        <a-entity id="teleHand"
-                  hand-controls="hand: left"
-                  blink-controls="collisionEntities: [mixin='voxel'], #ground"></a-entity>
-        <a-entity id="blockHand"
-                  hand-controls="hand: right"
-                  laser-controls
-                  raycaster="near: 0.5"
-                  intersection-spawn="event: click; mixin: voxel"></a-entity>
+        <!-- Lighting -->
+        <a-light type="ambient" color="#ffffff"></a-light>
+        <a-light type="directional" position="5 5 5"></a-light>
 
         <!-- Camera -->
-        <a-camera>
-          <!-- Uncomment the line below to place blocks on desktop or mobile -->
-          <!-- <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor> -->
-        </a-camera>
-      </a-entity>
+        <a-camera position="0 2 10" look-controls="pointerLockEnabled: true"></a-camera>
 
+        <!-- Planes with textures -->
+        <a-plane src="#office1" width="10" height="6" position="0 0 -3" rotation="0 0 0"></a-plane>
+        <a-plane src="#office2" width="10" height="6" position="0 0 3" rotation="0 180 0"></a-plane>
+        <a-plane src="#office3" width="10" height="6" position="-5 0 0" rotation="0 90 0"></a-plane>
+        <a-plane src="#office4" width="10" height="6" position="5 0 0" rotation="0 -90 0"></a-plane>
+        <a-plane src="#office5" width="10" height="10" position="0 -3 0" rotation="-90 0 0"></a-plane>
+        <a-plane src="#office6" width="10" height="10" position="0 3 0" rotation="90 0 0"></a-plane>
+
+        <!-- Image Assets -->
+        <a-assets>
+            <img id="office1" src="images/office1.jpg"> <!-- front -->
+            <img id="office2" src="images/office2.jpg"> <!--  -->
+            <img id="office3" src="images/office3.jpg"> <!-- left -->
+            <img id="office4" src="images/office4.jpg"> <!-- Right -->
+            <img id="office5" src="images/office5.jpg"> <!-- floor -->
+            <img id="office6" src="images/office6.jpg"> <!-- Celing -->
+        </a-assets>
     </a-scene>
-  </body>
+</body>
 </html>
