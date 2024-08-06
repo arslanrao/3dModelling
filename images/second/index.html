@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Modelling | Visnet</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+        body { margin: 0; }
+        #scene { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+    <a-scene>
+        <!-- Lighting -->
+        <a-light type="ambient" color="#ffffff"></a-light>
+        <a-light type="directional" position="5 5 5"></a-light>
+
+        <!-- Camera -->
+        <a-camera position="0 0 10" look-controls="pointerLockEnabled: true"></a-camera>
+
+        <!-- Planes with textures -->
+        <a-plane src="#office1" width="10" height="6" position="0 0 -5" rotation="0 0 0"></a-plane>
+        <a-plane src="#office2" width="10" height="6" position="0 0 5 " rotation="0 180 0"></a-plane>
+        <a-plane src="#office3" width="10" height="6" position="-5 0 0" rotation="0 90 0"></a-plane>
+        <a-plane src="#office4" width="10" height="6" position="5 0 0" rotation="0 -90 0"></a-plane>
+        <a-plane src="#office5" width="10" height="10" position="0 -3 0" rotation="-90 0 0"></a-plane>
+        <a-plane src="#office6" width="10" height="10" position="0 3 0" rotation="90 0 0"></a-plane>
+
+
+        <a-plane src="#office7" width="10" height="6" position="0 0 -15" rotation="0 0 0"></a-plane>
+        <a-plane src="#office8" width="10" height="6" position="-5 0 -10" rotation="0 90 0"></a-plane>
+        <a-plane src="#office9" width="10" height="6" position="5 0 -10" rotation="0 -90 0"></a-plane>
+        <a-plane src="#office10" width="10" height="10" position="0 -3 -10" rotation="-90 0 0"></a-plane>
+        <a-plane src="#office11" width="10" height="10" position="0 3 -10" rotation="90 0 0"></a-plane>
+
+
+        <a-plane src="#office12" width="10" height="6" position="0 0 -25" rotation="0 0 0"></a-plane>
+        <a-plane src="#office13" width="10" height="6" position="-5 0 -20" rotation="0 90 0"></a-plane>
+        <a-plane src="#office14" width="10" height="6" position="5 0 -20" rotation="0 -90 0"></a-plane>
+        <a-plane src="#office15" width="10" height="10" position="0 -3 -20" rotation="-90 0 0"></a-plane>
+        <a-plane src="#office16" width="10" height="10" position="0 3 -20" rotation="90 0 0"></a-plane>
+
+
+        <!-- Image Assets -->
+        <a-assets>
+            <img id="office1" src="images/second/front-f-1.jpeg"> <!-- front -->
+            <img id="office2" src="images/second/gate.jpeg"> <!-- front from back -->
+            <img id="office3" src="images/second/left-b-4.jpeg"> <!-- left -->
+            <img id="office4" src="images/second/right-f-1.jpeg"> <!-- Right -->
+            <img id="office5" src="images/second/floor.jpeg"> <!-- floor -->
+            <img id="office6" src="images/second/ceiling.jpeg"> <!-- Celing -->
+
+
+            <img id="office7" src="images/second/front-f-2.jpeg"> <!-- front2 -->
+            <img id="office8" src="images/second/left-b-2.jpeg"> <!-- left2 -->
+            <img id="office9" src="images/second/right-f-2.jpeg"> <!-- right2 -->
+            <img id="office10" src="images/second/floor.jpeg"> <!-- floor -->
+            <img id="office11" src="images/second/ceiling.jpeg"> <!-- Celing -->
+
+
+            <img id="office12" src="images/second/front-f-2.jpeg"> <!-- front3 -->
+            <img id="office13" src="images/second/left-b-1.jpeg"> <!-- left3 -->
+            <img id="office14" src="images/second/right-f-3.jpeg"> <!-- right3 -->
+            <img id="office15" src="images/second/floor.jpeg"> <!-- floor -->
+            <img id="office16" src="images/second/ceiling.jpeg"> <!-- Celing -->
+        </a-assets>
+    </a-scene>
+</body>
+</html>
